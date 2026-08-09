@@ -1,4 +1,4 @@
-# MeuApp app
+# MTC Mobile app
 
 ## Run the app
 
