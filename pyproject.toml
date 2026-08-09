@@ -1,0 +1,49 @@
+[project]
+name = "mtccloud"
+version = "0.2.7"
+description = "Cloud sync for MTChart Pro"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Merotec Developer", email = "merotec32@gmail.com" }
+]
+
+[tool.flet]
+# org name in reverse domain name notation, e.g. "com.mycompany".
+# Combined with project.name to build bundle ID for iOS and Android apps
+org = "com.merotecdev"
+
+# project display name that is used as an app title on Android and iOS home screens,
+# shown in window titles and about app dialogs on desktop.
+product = "MTC Pro Cloud"
+
+# company name to display in about app dialogs
+company = "Merotec Dev Softwares"
+
+# copyright text to display in about app dialogs
+copyright = "Copyright (C) 2026 by Merotec Dev Softwares"
+
+android_splash_image = "src/assets/splash.png"
+splash_color = "#212121"
+splash_dark_color = "#212121"
+
+# O build_number é o "versionCode" no Android. Ele deve ser sempre um número inteiro (ex: 1, 2, 3...) e obrigatoriamente maior a cada nova atualização na Play Store.
+build_number = 7
+
+# Permissões do sistema (O Flet injeta automaticamente as nativas do Android e iOS baseado nisso)
+permissions = [
+    "camera"
+]
+
+# Forçando injeção de tags manuais no AndroidManifest.xml (sintaxe do Flet exige o =True)
+android_permissions = [
+    "android.permission.CAMERA=True",
+    "android.permission.INTERNET=True"
+]
+
+[tool.flet.app]
+path = "src"
+
+[tool.flet.android]
+target_sdk_version = 37
+# (Nota: O Flet atualmente não lê o target_sdk_version daqui. O Flutter 3.29 (que o Flet usa) já define automaticamente o Target SDK para o 35 ou o mais recente exigido pela Google Play Store).

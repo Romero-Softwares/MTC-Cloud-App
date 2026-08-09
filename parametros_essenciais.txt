@@ -1,0 +1,14 @@
+# Apaga o cache do Flutter e do Flet para forçar a leitura do TOML
+rmdir /s /q build
+rmdir /s /q .dart_tool
+rmdir /s /q .flet
+
+# Build App
+flet build apk --arch arm64-v8a --v
+flet build aab --arch arm64-v8a --v
+
+java -jar bundletool.jar dump manifest --bundle=build/aab/app-release.aab
+
+.\cloudflared.exe tunnel login
+.\cloudflared.exe tunnel create mercadinho
+.\cloudflared.exe tunnel route dns mercadinho mdfam.shop

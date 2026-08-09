@@ -1,0 +1,24 @@
+# Python environments and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local application data and IDE settings
+storage/
+.idea/
+
+# Build outputs and Flutter/Flet generated files
+build/
+.dart_tool/
+.flet/
+
+# Signed release artifacts and signing credentials
+*.keystore
+*.jks
+aab/
+
+# Local tools and generated media
+bundletool.jar
+cloudflared.exe
+*.log
