@@ -46,4 +46,3 @@ path = "src"
 
 [tool.flet.android]
 target_sdk_version = 37
-# (Nota: O Flet atualmente não lê o target_sdk_version daqui. O Flutter 3.29 (que o Flet usa) já define automaticamente o Target SDK para o 35 ou o mais recente exigido pela Google Play Store).
